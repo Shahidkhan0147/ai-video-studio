@@ -8,38 +8,26 @@
 <style>
 *{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
 body{font-family:'Inter',sans-serif;background:#f0f0ee;color:#1a1a1a;min-height:100vh;font-size:14px}
-
-/* TOPBAR */
 .topbar{background:#fff;border-bottom:1px solid #e0e0e0;padding:10px 14px;display:flex;align-items:center;gap:6px;flex-wrap:wrap;position:sticky;top:0;z-index:100}
 .topbar-logo{font-size:15px;font-weight:600;letter-spacing:-0.3px}
 .badge{font-size:10px;border-radius:4px;padding:2px 6px;border:1px solid;white-space:nowrap}
 .badge.free{background:#EAF3DE;color:#3B6D11;border-color:#97C459}
 .badge.yt{background:#FCEBEB;color:#A32D2D;border-color:#F09595}
 .badge.gem{background:#E6F1FB;color:#185FA5;border-color:#85B7EB}
+.badge.px{background:#FDEBD3;color:#8A4B0B;border-color:#F5C48C}
 .badge.ratio{background:#FAEEDA;color:#854F0B;border-color:#FAC775}
 .topbar-spacer{flex:1}
-.kg-indicator{display:flex;align-items:center;gap:5px;font-size:11px;color:#666}
-.kg-dot{width:8px;height:8px;border-radius:50%;background:#ccc}
-.kg-dot.on{background:#639922}
-
-/* MAIN LAYOUT - Single column on mobile */
 .page{display:flex;flex-direction:column;gap:0}
-
-/* SECTIONS */
 .section{background:#fff;border-bottom:1px solid #e0e0e0;padding:14px}
 .slabel{font-size:10px;font-weight:600;color:#999;text-transform:uppercase;letter-spacing:.8px;margin-bottom:10px}
-
-/* HOST */
 .host-zone{border:2px dashed #ccc;border-radius:12px;padding:16px;text-align:center;cursor:pointer;position:relative;background:#fafafa}
 .host-zone input{position:absolute;inset:0;opacity:0;cursor:pointer;width:100%;height:100%}
 .host-avatar{width:70px;height:70px;border-radius:50%;object-fit:cover;border:3px solid #1D9E75;margin:0 auto 8px;display:block}
 .host-ph{width:70px;height:70px;border-radius:50%;background:#E1F5EE;display:flex;align-items:center;justify-content:center;margin:0 auto 8px}
 .host-name{width:100%;border:1px solid #ddd;border-radius:8px;padding:10px 12px;font-size:14px;background:#fff;color:#1a1a1a;margin-top:10px}
 .host-name:focus{outline:none;border-color:#1D9E75}
-
-/* RATIO */
 .ratio-options{display:flex;gap:10px;margin-top:10px}
-.ratio-card{flex:1;border:2px solid #ddd;border-radius:10px;padding:12px 8px;cursor:pointer;text-align:center;background:#fff;transition:all .2s;-webkit-tap-highlight-color:rgba(29,158,117,0.1)}
+.ratio-card{flex:1;border:2px solid #ddd;border-radius:10px;padding:12px 8px;cursor:pointer;text-align:center;background:#fff}
 .ratio-card.selected{border-color:#1D9E75;background:#E1F5EE}
 .ratio-card.selected .ratio-label{color:#0F6E56;font-weight:600}
 .ratio-visual-wrap{display:flex;justify-content:center;align-items:center;height:50px;margin-bottom:8px}
@@ -47,61 +35,32 @@ body{font-family:'Inter',sans-serif;background:#f0f0ee;color:#1a1a1a;min-height:
 .ratio-card.selected .ratio-box{background:#9FE1CB;border-color:#1D9E75}
 .ratio-label{font-size:14px;font-weight:500}
 .ratio-sub{font-size:11px;color:#999;margin-top:3px}
-.ratio-badges{display:flex;gap:4px;justify-content:center;margin-top:6px;flex-wrap:wrap}
-.rb{font-size:10px;padding:2px 6px;border-radius:4px;background:#f0f0ee;color:#666;border:1px solid #ddd}
-.ratio-card.selected .rb{background:#E1F5EE;color:#0F6E56;border-color:#5DCAA5}
-
-/* FIELDS */
 .field-group{margin-bottom:12px}
 .field-group label{font-size:11px;color:#666;display:block;margin-bottom:4px;font-weight:500}
 .field-group input,.field-group select{width:100%;border:1px solid #ddd;border-radius:8px;padding:10px 12px;font-size:14px;background:#fff;color:#1a1a1a}
 .field-group input:focus,.field-group select:focus{outline:none;border-color:#1D9E75}
 .field-hint{font-size:11px;color:#999;margin-top:4px;line-height:1.5}
-
-/* TOGGLE - LARGE for mobile */
-.toggle-row{display:flex;align-items:center;justify-content:space-between;padding:4px 0;margin-bottom:10px}
-.toggle-label{font-size:14px;font-weight:500}
-.sw{width:52px;height:30px;background:#ccc;border-radius:15px;cursor:pointer;position:relative;transition:background .2s;flex-shrink:0;border:none;-webkit-appearance:none}
-.sw.on{background:#1D9E75}
-.sw::after{content:'';position:absolute;top:3px;left:3px;width:24px;height:24px;border-radius:50%;background:#fff;transition:transform .2s;box-shadow:0 1px 3px rgba(0,0,0,0.3)}
-.sw.on::after{transform:translateX(22px)}
-
-/* FREE BANNER */
 .free-banner{background:#EAF3DE;border:1px solid #97C459;border-radius:8px;padding:10px 12px;font-size:12px;color:#3B6D11;display:flex;align-items:flex-start;gap:6px;line-height:1.5;margin-bottom:12px}
-
-/* VOICE CHARS */
+.free-banner.px{background:#FDEBD3;border-color:#F5C48C;color:#8A4B0B}
 .vc-list{display:flex;flex-direction:column;gap:8px;margin-bottom:10px}
 .vc{background:#f9f9f7;border-radius:10px;padding:10px 12px;border:1px solid #ddd}
 .vc-row{display:flex;align-items:center;gap:8px;margin-bottom:6px}
 .vc-row input{flex:1;border:1px solid #ddd;border-radius:6px;padding:8px 10px;font-size:13px;background:#fff;color:#1a1a1a}
-.vc-row input:focus{outline:none;border-color:#1D9E75}
-.vc select{width:100%;border:1px solid #ddd;border-radius:6px;padding:8px 10px;font-size:13px;background:#fff;color:#1a1a1a}
-.vc select:focus{outline:none;border-color:#1D9E75}
 .rm-btn{background:#FCEBEB;border:1px solid #F09595;border-radius:6px;cursor:pointer;color:#A32D2D;font-size:13px;padding:8px 10px;flex-shrink:0;min-width:36px;min-height:36px;display:flex;align-items:center;justify-content:center}
 .add-vc-btn{width:100%;padding:12px;border:2px dashed #1D9E75;border-radius:10px;background:#E1F5EE;color:#0F6E56;font-size:14px;font-weight:500;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:6px;min-height:46px}
-
-/* PIPELINE BANNER */
 .pipeline-banner{background:#E1F5EE;border:1px solid #5DCAA5;border-radius:10px;padding:12px;font-size:12px;color:#085041;line-height:1.6;margin-bottom:14px}
-
-/* TABS */
 .tabs{display:flex;gap:2px;background:#f0f0ee;border-radius:8px;padding:3px;margin-bottom:14px}
 .tab{flex:1;padding:8px;border-radius:6px;font-size:13px;cursor:pointer;border:none;background:transparent;color:#666;font-weight:500;min-height:36px}
 .tab.active{background:#fff;color:#1a1a1a;box-shadow:0 1px 3px rgba(0,0,0,0.15)}
 .tc{display:none}.tc.active{display:block}
-
-/* TOOLBAR */
 .toolbar{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:10px}
 .ins{padding:8px 12px;border:1px solid #ddd;border-radius:8px;background:#fff;font-size:12px;cursor:pointer;color:#666;display:flex;align-items:center;gap:4px;min-height:36px;font-weight:500}
 .ins.c{border-color:#F0997B;color:#993C1D;background:#FAECE7}
 .ins.p{border-color:#AFA9EC;color:#534AB7;background:#EEEDFE}
 .ins.t{border-color:#5DCAA5;color:#0F6E56;background:#E1F5EE}
 .ins.a{border-color:#FAC775;color:#854F0B;background:#FAEEDA}
-
-/* SCRIPT */
 .script-wrap{background:#fff;border-radius:10px;border:1px solid #ddd;overflow:hidden;margin-bottom:10px}
 .script-ta{width:100%;min-height:200px;border:none;padding:14px;font-size:13px;line-height:1.8;background:transparent;color:#1a1a1a;resize:vertical;font-family:'Courier New',monospace;outline:none}
-
-/* LEGEND */
 .legend{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:14px}
 .li{display:flex;align-items:center;gap:6px;font-size:11px;color:#666}
 .lt{font-family:'Courier New',monospace;font-size:10px;padding:2px 6px;border-radius:3px}
@@ -109,47 +68,37 @@ body{font-family:'Inter',sans-serif;background:#f0f0ee;color:#1a1a1a;min-height:
 .lt.as{background:#EEEDFE;color:#534AB7}
 .lt.vo{background:#E1F5EE;color:#0F6E56}
 .lt.to{background:#FAEEDA;color:#854F0B}
-
-/* SCENE CARDS */
 .scene-cards{display:flex;flex-direction:column;gap:10px}
 .scard{background:#fff;border-radius:10px;border:1px solid #ddd;overflow:hidden}
 .scard-head{padding:10px 14px;background:#f9f9f7;display:flex;align-items:center;justify-content:space-between;font-size:13px;font-weight:600;flex-wrap:wrap;gap:6px}
 .sstat{font-size:11px;padding:3px 8px;border-radius:6px}
 .sstat.pending{background:#f0f0ee;color:#999;border:1px solid #ddd}
-.sstat.yt-searching{background:#FCEBEB;color:#A32D2D}
-.sstat.yt-found{background:#EAF3DE;color:#3B6D11}
-.sstat.hunyuan{background:#EEEDFE;color:#534AB7}
+.sstat.working{background:#FCEBEB;color:#A32D2D}
 .sstat.done{background:#E1F5EE;color:#0F6E56}
 .scard-body{padding:10px 14px;font-size:12px;color:#666;line-height:1.7}
 .chip{display:inline-flex;align-items:center;gap:3px;border-radius:5px;padding:3px 8px;font-size:11px;margin:2px}
 .chip.yt{background:#FCEBEB;color:#A32D2D}
-.chip.hq{background:#EEEDFE;color:#534AB7}
+.chip.px{background:#FDEBD3;color:#8A4B0B}
 .chip.vo{background:#E1F5EE;color:#0F6E56}
 .chip.to{background:#FAEEDA;color:#854F0B}
 .chip.as{background:#E6F1FB;color:#185FA5}
-.chip.rt{background:#FAEEDA;color:#854F0B}
-.yt-result{display:flex;align-items:center;gap:8px;background:#f9f9f7;border-radius:8px;padding:6px 10px;margin:5px 0;font-size:11px}
-.yt-thumb{width:40px;height:26px;border-radius:4px;background:#FCEBEB;display:flex;align-items:center;justify-content:center;flex-shrink:0}
-
-/* LOG */
+.result-link{color:#185FA5;font-weight:500;text-decoration:none}
 .out-panel{background:#fff;border-radius:10px;border:1px solid #ddd;overflow:hidden}
 .out-head{padding:10px 14px;border-bottom:1px solid #ddd;display:flex;align-items:center;gap:6px;font-size:13px;font-weight:600}
 .out-log{padding:10px 14px;font-family:'Courier New',monospace;font-size:11px;line-height:1.8;min-height:150px;max-height:300px;overflow-y:auto;color:#666}
 .ll{display:flex;gap:8px;padding:1px 0;flex-wrap:wrap}
 .lt2{color:#999;min-width:58px;font-size:10px;flex-shrink:0}
-.log-ok{color:#3B6D11}.log-warn{color:#854F0B}.log-err{color:#A32D2D}.log-gem{color:#1D9E75}.log-yt{color:#A32D2D}
+.log-ok{color:#3B6D11}.log-warn{color:#854F0B}.log-err{color:#A32D2D}.log-gem{color:#1D9E75}.log-yt{color:#A32D2D}.log-px{color:#8A4B0B}.log-ff{color:#534AB7}
 .pbar-wrap{height:4px;background:#f0f0ee;border-radius:2px;overflow:hidden;margin-top:3px}
 .pbar{height:100%;background:#1D9E75;border-radius:2px;transition:width .35s ease}
-
-/* RUN BAR */
 .run-bar{position:sticky;bottom:0;background:#fff;border-top:1px solid #e0e0e0;padding:12px 14px;display:flex;align-items:center;gap:10px;flex-wrap:wrap;z-index:100}
-.run-btn{padding:14px 28px;background:#1D9E75;color:#fff;border:none;border-radius:10px;font-size:15px;font-weight:600;cursor:pointer;display:flex;align-items:center;gap:8px;transition:background .15s;min-height:50px;flex:1;justify-content:center}
-.run-btn:active{background:#0F6E56}
+.run-btn{padding:14px 28px;background:#1D9E75;color:#fff;border:none;border-radius:10px;font-size:15px;font-weight:600;cursor:pointer;display:flex;align-items:center;gap:8px;min-height:50px;flex:1;justify-content:center}
 .run-btn:disabled{background:#ccc;cursor:not-allowed}
 .run-btn.running{background:#854F0B}
 .status-txt{font-size:11px;color:#666;width:100%;text-align:center}
 .ratio-run-info{display:flex;align-items:center;gap:6px;font-size:12px;color:#0F6E56;font-weight:500;width:100%;justify-content:center}
-
+.result-video{width:100%;border-radius:10px;margin-top:10px;background:#000}
+.dl-btn{display:flex;align-items:center;justify-content:center;gap:6px;width:100%;padding:14px;background:#1D9E75;color:#fff;border:none;border-radius:10px;font-size:14px;font-weight:600;cursor:pointer;margin-top:8px}
 .empty{text-align:center;padding:30px;color:#999;font-size:13px}
 .empty i{font-size:32px;display:block;margin-bottom:8px;color:#ccc}
 .spinner{width:16px;height:16px;border:2px solid rgba(255,255,255,.3);border-top-color:#fff;border-radius:50%;animation:spin .7s linear infinite;display:inline-block}
@@ -163,18 +112,14 @@ body{font-family:'Inter',sans-serif;background:#f0f0ee;color:#1a1a1a;min-height:
   <span class="topbar-logo">AI Video Studio</span>
   <span class="badge free">Free</span>
   <span class="badge gem">Gemini</span>
-  <span class="badge yt">YouTube First</span>
+  <span class="badge yt">YouTube</span>
+  <span class="badge px">Pixabay</span>
   <span class="badge ratio" id="topbar-ratio">16:9</span>
   <div class="topbar-spacer"></div>
-  <div class="kg-indicator">
-    <div class="kg-dot" id="kg-dot"></div>
-    <span id="kg-txt">Kaggle Off</span>
-  </div>
 </div>
 
 <div class="page">
 
-  <!-- HOST -->
   <div class="section">
     <div class="slabel">Host</div>
     <div class="host-zone" id="host-zone">
@@ -186,113 +131,58 @@ body{font-family:'Inter',sans-serif;background:#f0f0ee;color:#1a1a1a;min-height:
     <input class="host-name" id="host-name" placeholder="Host name e.g. Oscar" type="text">
   </div>
 
-  <!-- VIDEO FORMAT -->
   <div class="section">
     <div class="slabel">Video Format</div>
     <div style="font-size:12px;color:#666">Choose aspect ratio before running</div>
     <div class="ratio-options">
-      <div class="ratio-card selected" data-ratio="16:9" id="ratio-169" onclick="selectRatio(this)">
-        <div class="ratio-visual-wrap">
-          <div class="ratio-box" style="width:46px;height:28px"></div>
-        </div>
-        <div class="ratio-label">16:9</div>
-        <div class="ratio-sub">Landscape</div>
-        <div class="ratio-badges">
-          <span class="rb">YouTube</span>
-          <span class="rb">TV</span>
-        </div>
+      <div class="ratio-card selected" data-ratio="16:9" onclick="selectRatio(this)">
+        <div class="ratio-visual-wrap"><div class="ratio-box" style="width:46px;height:28px"></div></div>
+        <div class="ratio-label">16:9</div><div class="ratio-sub">Landscape</div>
       </div>
-      <div class="ratio-card" data-ratio="9:16" id="ratio-916" onclick="selectRatio(this)">
-        <div class="ratio-visual-wrap">
-          <div class="ratio-box" style="width:24px;height:44px"></div>
-        </div>
-        <div class="ratio-label">9:16</div>
-        <div class="ratio-sub">Vertical</div>
-        <div class="ratio-badges">
-          <span class="rb">Reels</span>
-          <span class="rb">Shorts</span>
-        </div>
+      <div class="ratio-card" data-ratio="9:16" onclick="selectRatio(this)">
+        <div class="ratio-visual-wrap"><div class="ratio-box" style="width:24px;height:44px"></div></div>
+        <div class="ratio-label">9:16</div><div class="ratio-sub">Vertical</div>
       </div>
     </div>
-    <div style="font-size:11px;color:#3B6D11;margin-top:8px" id="ratio-hint">1920x1080 — best for YouTube, website, TV</div>
   </div>
 
-  <!-- GEMINI -->
   <div class="section">
     <div class="slabel">AI Brain — Gemini (Free)</div>
-    <div class="free-banner">
-      <i class="ti ti-check" style="font-size:16px;flex-shrink:0"></i>
-      <span><strong>100% free.</strong> Get key at aistudio.google.com — no credit card needed. 1 million tokens/day free.</span>
-    </div>
-    <div class="field-group">
-      <label>Gemini API Key</label>
-      <input type="password" id="gem-key" placeholder="AIza...">
-    </div>
-    <div class="field-hint"><i class="ti ti-external-link"></i> aistudio.google.com → Sign in → Get API Key</div>
+    <div class="free-banner"><i class="ti ti-check" style="font-size:16px;flex-shrink:0"></i>
+      <span><strong>100% free.</strong> Get key at aistudio.google.com</span></div>
+    <div class="field-group"><label>Gemini API Key</label><input type="password" id="gem-key" placeholder="AIza..."></div>
   </div>
 
-  <!-- YOUTUBE -->
   <div class="section">
     <div class="slabel">YouTube API (Free)</div>
-    <div class="field-group">
-      <label>YouTube Data API v3 Key</label>
-      <input type="password" id="yt-key" placeholder="AIza...">
-    </div>
-    <div class="field-hint"><i class="ti ti-external-link"></i> console.cloud.google.com → Enable YouTube API → Credentials → Create Key. Free 10,000/day.</div>
+    <div class="field-group"><label>YouTube Data API v3 Key</label><input type="password" id="yt-key" placeholder="AIza..."></div>
+    <div class="field-hint">Used only to find and link a reference match — YouTube footage can't legally be downloaded into your final video, so it won't appear in the rendered file itself.</div>
   </div>
 
-  <!-- KAGGLE -->
   <div class="section">
-    <div class="slabel">Kaggle GPU — Hunyuan Fallback (Free)</div>
-    <div class="toggle-row">
-      <span class="toggle-label">Use Kaggle GPU</span>
-      <button class="sw" id="kg-sw" onclick="toggleKaggle()" type="button" aria-label="Toggle Kaggle GPU"></button>
-    </div>
-    <div id="kg-fields" style="display:none">
-      <div class="field-group">
-        <label>Kaggle Username</label>
-        <input type="text" id="kg-user" placeholder="your_username">
-      </div>
-      <div class="field-group">
-        <label>Kaggle API Key</label>
-        <input type="password" id="kg-key" placeholder="paste key from kaggle.json">
-      </div>
-      <div class="field-group">
-        <label>GPU Kernel</label>
-        <select id="kg-kernel">
-          <option>Auto GPU</option>
-          <option>Tesla T4</option>
-          <option>P100</option>
-        </select>
-      </div>
-      <div class="field-hint"><i class="ti ti-cpu"></i> Free 30hrs/week. Hunyuan generates clips when YouTube has nothing.</div>
-    </div>
+    <div class="slabel">Pixabay — Real Downloadable Clips (Free)</div>
+    <div class="free-banner px"><i class="ti ti-check" style="font-size:16px;flex-shrink:0"></i>
+      <span><strong>This is what actually renders into your video.</strong> Free key, no card needed.</span></div>
+    <div class="field-group"><label>Pixabay API Key</label><input type="password" id="px-key" placeholder="12345678-abcdef..."></div>
+    <div class="field-hint"><i class="ti ti-external-link"></i> pixabay.com/api/docs/ (while logged in) → your key is shown right on the page</div>
   </div>
 
-  <!-- VOICE CHARACTERS -->
   <div class="section">
     <div class="slabel">Voice Characters</div>
+    <div style="font-size:11px;color:#999;margin-bottom:8px">Voiceover audio is generated for real using meSpeak, a free offline TTS engine that runs entirely in your browser.</div>
     <div class="vc-list" id="vc-list"></div>
-    <button class="add-vc-btn" onclick="addChar()" type="button">
-      <i class="ti ti-plus" style="font-size:18px"></i> Add Character
-    </button>
+    <button class="add-vc-btn" onclick="addChar()" type="button"><i class="ti ti-plus" style="font-size:18px"></i> Add Character</button>
   </div>
 
-  <!-- SCRIPT EDITOR -->
   <div class="section">
-    <div class="pipeline-banner">
-      <strong>Free pipeline:</strong> Gemini analyses script → <strong>YouTube</strong> searched for each asset → not found? <strong>Hunyuan AI</strong> generates on Kaggle GPU → Bark TTS adds natural voiceovers
-    </div>
-
+    <div class="pipeline-banner"><strong>Pipeline:</strong> Gemini plans scenes → YouTube searched for reference → Pixabay supplies the real downloadable clip → meSpeak renders real voiceover audio → ffmpeg.wasm (in your browser) stitches it all into one downloadable .mp4</div>
     <div style="font-size:15px;font-weight:600;margin-bottom:4px">Script Editor</div>
     <div style="font-size:12px;color:#666;margin-bottom:12px">Tag your scenes, assets, voices and tones</div>
-
     <div class="tabs">
       <button class="tab active" onclick="switchTab('write',this)" type="button">Write</button>
       <button class="tab" onclick="switchTab('scenes',this)" type="button">Scenes</button>
       <button class="tab" onclick="switchTab('output',this)" type="button">Log</button>
     </div>
-
     <div class="tc active" id="tab-write">
       <div class="toolbar">
         <button class="ins c" onclick="ins('[SCENE: Scene title]')" type="button"><i class="ti ti-stack"></i> Scene</button>
@@ -300,10 +190,7 @@ body{font-family:'Inter',sans-serif;background:#f0f0ee;color:#1a1a1a;min-height:
         <button class="ins t" onclick="ins('[VOICE: Name] dialogue [/VOICE]')" type="button"><i class="ti ti-microphone"></i> Voice</button>
         <button class="ins a" onclick="ins('[TONE: excited]')" type="button"><i class="ti ti-mood-smile"></i> Tone</button>
       </div>
-      <div class="script-wrap">
-        <textarea class="script-ta" id="script" placeholder="Write your script here. Example:
-
-[SCENE: Opening Hook]
+      <div class="script-wrap"><textarea class="script-ta" id="script" placeholder="[SCENE: Opening Hook]
 [ASSET: aerial view city sunrise]
 [TONE: excited]
 [VOICE: Host] Welcome! Today we reveal something incredible. [/VOICE]
@@ -311,74 +198,52 @@ body{font-family:'Inter',sans-serif;background:#f0f0ee;color:#1a1a1a;min-height:
 [SCENE: Main Content]
 [ASSET: close-up laptop typing]
 [TONE: calm]
-[VOICE: Host] This is built for creators like you. [/VOICE]
-[VOICE: Narrator] Powered by AI, nothing comes close. [/VOICE]"></textarea>
-      </div>
+[VOICE: Host] This is built for creators like you. [/VOICE]"></textarea></div>
       <div class="legend">
         <div class="li"><span class="lt sc">[SCENE]</span> Scene</div>
-        <div class="li"><span class="lt as">[ASSET]</span> YouTube→AI</div>
+        <div class="li"><span class="lt as">[ASSET]</span> Footage</div>
         <div class="li"><span class="lt vo">[VOICE]</span> Dialogue</div>
         <div class="li"><span class="lt to">[TONE]</span> Emotion</div>
       </div>
     </div>
-
-    <div class="tc" id="tab-scenes">
-      <div class="scene-cards" id="scene-cards">
-        <div class="empty"><i class="ti ti-stack-2"></i>Press Run Agent to parse your script</div>
-      </div>
-    </div>
-
+    <div class="tc" id="tab-scenes"><div class="scene-cards" id="scene-cards"><div class="empty"><i class="ti ti-stack-2"></i>Press Run Agent to parse your script</div></div></div>
     <div class="tc" id="tab-output">
       <div class="out-panel">
-        <div class="out-head">
-          <i class="ti ti-terminal-2" style="color:#1D9E75"></i>
-          Agent Log
-          <div style="flex:1"></div>
-          <div id="prog-wrap" style="width:100px;display:none">
-            <div style="font-size:10px;color:#999" id="prog-lbl">0%</div>
-            <div class="pbar-wrap"><div class="pbar" id="pbar" style="width:0%"></div></div>
-          </div>
+        <div class="out-head"><i class="ti ti-terminal-2" style="color:#1D9E75"></i>Agent Log<div style="flex:1"></div>
+          <div id="prog-wrap" style="width:100px;display:none"><div style="font-size:10px;color:#999" id="prog-lbl">0%</div><div class="pbar-wrap"><div class="pbar" id="pbar" style="width:0%"></div></div></div>
         </div>
-        <div class="out-log" id="out-log">
-          <div style="color:#999;padding:8px 0">Agent idle. Press Run Agent to begin.</div>
-        </div>
+        <div class="out-log" id="out-log"><div style="color:#999;padding:8px 0">Agent idle. Press Run Agent to begin.</div></div>
+      </div>
+      <div id="result-wrap" style="display:none">
+        <video class="result-video" id="result-video" controls></video>
+        <button class="dl-btn" id="dl-btn" onclick="downloadResult()" type="button"><i class="ti ti-download"></i> Download final-video.mp4</button>
       </div>
     </div>
   </div>
-
 </div>
 
-<!-- RUN BAR -->
 <div class="run-bar">
-  <div class="ratio-run-info">
-    <div id="ratio-mini" style="border:2px solid #1D9E75;border-radius:2px;background:#9FE1CB;width:24px;height:15px;flex-shrink:0"></div>
-    <span id="ratio-run-label">16:9 — 1920x1080 Landscape</span>
-  </div>
-  <button class="run-btn" id="run-btn" onclick="runAgent()" type="button">
-    <i class="ti ti-player-play" id="run-ico"></i>
-    Run Agent
-  </button>
-  <div class="status-txt" id="run-status">Add your API keys, write script, press Run Agent</div>
+  <div class="ratio-run-info"><div id="ratio-mini" style="border:2px solid #1D9E75;border-radius:2px;background:#9FE1CB;width:24px;height:15px;flex-shrink:0"></div><span id="ratio-run-label">16:9 — 960x540</span></div>
+  <button class="run-btn" id="run-btn" onclick="runAgent()" type="button"><i class="ti ti-player-play"></i> Run Agent</button>
+  <div class="status-txt" id="run-status">Add Gemini/YouTube/Pixabay keys, write script, press Run Agent</div>
 </div>
 
+<script src="https://cdn.jsdelivr.net/npm/mespeak@2.0.11/mespeak.min.js"></script>
+<script type="module">
+import { FFmpeg } from 'https://cdn.jsdelivr.net/npm/@ffmpeg/ffmpeg@0.12.10/dist/esm/index.js';
+import { fetchFile, toBlobURL } from 'https://cdn.jsdelivr.net/npm/@ffmpeg/util@0.12.1/dist/esm/index.js';
+window.__ffmpeg = { FFmpeg, fetchFile, toBlobURL };
+</script>
 <script>
-var running=false,kaggle=false,chars=[],scenes=[],logs=[],selectedRatio='16:9';
+var running=false,chars=[],scenes=[],logs=[],selectedRatio='16:9',lastPlan=null,resultBlob=null;
 var VOICES=['Host (Male)','Narrator','Sarah (Female)','Marcus (Deep)','Lily (Soft)'];
-var RATIO_INFO={
-  '16:9':{res:'1920x1080',desc:'Landscape',hint:'1920x1080 — best for YouTube, website, TV',miniW:24,miniH:15},
-  '9:16':{res:'1080x1920',desc:'Vertical',hint:'1080x1920 — best for Reels, TikTok, Shorts',miniW:15,miniH:24}
-};
+var RATIO_INFO={'16:9':{w:960,h:540,label:'960x540'},'9:16':{w:540,h:960,label:'540x960'}};
+var mespeakReady=false,ffmpegInstance=null,ffmpegReady=false;
 
-function toggleKaggle(){
-  kaggle=!kaggle;
-  var sw=document.getElementById('kg-sw');
-  if(kaggle){sw.classList.add('on');}else{sw.classList.remove('on');}
-  sw.setAttribute('aria-checked',kaggle);
-  document.getElementById('kg-fields').style.display=kaggle?'block':'none';
-  var dot=document.getElementById('kg-dot');
-  if(kaggle){dot.classList.add('on');}else{dot.classList.remove('on');}
-  document.getElementById('kg-txt').textContent=kaggle?'Kaggle On':'Kaggle Off';
-}
+try{
+  meSpeak.loadConfig("https://cdn.jsdelivr.net/npm/mespeak@2.0.11/src/mespeak_config.json");
+  meSpeak.loadVoice("https://cdn.jsdelivr.net/npm/mespeak@2.0.11/voices/en/en-us.json",function(success){mespeakReady=!!success;});
+}catch(e){}
 
 function selectRatio(el){
   document.querySelectorAll('.ratio-card').forEach(function(c){c.classList.remove('selected');});
@@ -386,11 +251,9 @@ function selectRatio(el){
   selectedRatio=el.dataset.ratio;
   var info=RATIO_INFO[selectedRatio];
   document.getElementById('topbar-ratio').textContent=selectedRatio;
-  document.getElementById('ratio-hint').textContent=info.hint;
-  var mini=document.getElementById('ratio-mini');
-  mini.style.width=info.miniW+'px';
-  mini.style.height=info.miniH+'px';
-  document.getElementById('ratio-run-label').textContent=selectedRatio+' — '+info.res+' '+info.desc;
+  document.getElementById('ratio-mini').style.width=(selectedRatio==='16:9'?24:15)+'px';
+  document.getElementById('ratio-mini').style.height=(selectedRatio==='16:9'?15:24)+'px';
+  document.getElementById('ratio-run-label').textContent=selectedRatio+' — '+info.label;
 }
 
 function switchTab(id,btn){
@@ -410,38 +273,20 @@ document.getElementById('host-file').addEventListener('change',function(e){
 
 function addChar(name,voice){
   name=name||'';voice=voice||VOICES[0];
-  chars.push({id:Date.now(),name:name,voice:voice});
+  chars.push({id:Date.now()+Math.random(),name:name,voice:voice});
   renderChars();
 }
-
-function removeChar(id){
-  chars=chars.filter(function(c){return c.id!==id;});
-  renderChars();
-}
-
+function removeChar(id){chars=chars.filter(function(c){return c.id!==id;});renderChars();}
 function renderChars(){
   var l=document.getElementById('vc-list');
-  if(!chars.length){
-    l.innerHTML='<div style="font-size:12px;color:#999;text-align:center;padding:8px">No characters yet — tap Add Character</div>';
-    return;
-  }
+  if(!chars.length){l.innerHTML='<div style="font-size:12px;color:#999;text-align:center;padding:8px">No characters yet</div>';return;}
   l.innerHTML=chars.map(function(c){
-    return '<div class="vc">'+
-      '<div class="vc-row">'+
-        '<input value="'+c.name+'" placeholder="Character name e.g. Host" oninput="updateChar('+c.id+',\'name\',this.value)">'+
-        '<button class="rm-btn" onclick="removeChar('+c.id+')" type="button"><i class="ti ti-trash"></i></button>'+
-      '</div>'+
-      '<select onchange="updateChar('+c.id+',\'voice\',this.value)">'+
-        VOICES.map(function(v){return '<option'+(v===c.voice?' selected':'')+'>'+v+'</option>';}).join('')+
-      '</select>'+
-    '</div>';
+    return '<div class="vc"><div class="vc-row"><input value="'+c.name+'" placeholder="Character name" oninput="updateChar('+c.id+',\'name\',this.value)">'+
+      '<button class="rm-btn" onclick="removeChar('+c.id+')" type="button"><i class="ti ti-trash"></i></button></div>'+
+      '<select onchange="updateChar('+c.id+',\'voice\',this.value)">'+VOICES.map(function(v){return '<option'+(v===c.voice?' selected':'')+'>'+v+'</option>';}).join('')+'</select></div>';
   }).join('');
 }
-
-function updateChar(id,field,val){
-  var c=chars.find(function(x){return x.id===id;});
-  if(c) c[field]=val;
-}
+function updateChar(id,field,val){var c=chars.find(function(x){return x.id===id;});if(c) c[field]=val;}
 
 function ins(tag){
   var ta=document.getElementById('script');
@@ -455,17 +300,10 @@ function addLog(msg,type){
   var t=new Date().toTimeString().slice(0,8);
   logs.push({t:t,msg:msg,type:type});
   var l=document.getElementById('out-log');
-  l.innerHTML=logs.map(function(x){
-    return '<div class="ll"><span class="lt2">'+x.t+'</span><span class="'+(x.type?'log-'+x.type:'')+'" style="'+(x.type?'':'color:#666')+'">'+x.msg+'</span></div>';
-  }).join('');
+  l.innerHTML=logs.map(function(x){return '<div class="ll"><span class="lt2">'+x.t+'</span><span class="'+(x.type?'log-'+x.type:'')+'" style="'+(x.type?'':'color:#666')+'">'+x.msg+'</span></div>';}).join('');
   l.scrollTop=l.scrollHeight;
 }
-
-function setP(pct,lbl){
-  document.getElementById('prog-wrap').style.display='block';
-  document.getElementById('pbar').style.width=pct+'%';
-  document.getElementById('prog-lbl').textContent=lbl||pct+'%';
-}
+function setP(pct,lbl){document.getElementById('prog-wrap').style.display='block';document.getElementById('pbar').style.width=pct+'%';document.getElementById('prog-lbl').textContent=lbl||pct+'%';}
 
 function parseScript(sc){
   var arr=[];
@@ -477,48 +315,25 @@ function parseScript(sc){
       assets:Array.from(m[2].matchAll(/\[ASSET:\s*([^\]]+)\]/gi)).map(function(x){return x[1].trim();}),
       voices:Array.from(m[2].matchAll(/\[VOICE:\s*([^\]]+)\]([\s\S]*?)\[\/VOICE\]/gi)).map(function(x){return{char:x[1].trim(),line:x[2].trim()};}),
       tones:Array.from(m[2].matchAll(/\[TONE:\s*([^\]]+)\]/gi)).map(function(x){return x[1].trim();}),
-      status:'pending',assetResults:[]
+      status:'pending',assetResult:null,clipBlob:null,audioBlob:null,duration:4
     });
   }
-  if(!arr.length&&sc.trim()) arr.push({title:'Main Scene',assets:[],voices:[],tones:[],status:'pending',assetResults:[]});
+  if(!arr.length&&sc.trim()) arr.push({title:'Main Scene',assets:[],voices:[],tones:[],status:'pending',assetResult:null,clipBlob:null,audioBlob:null,duration:4});
   return arr;
-}
-
-function statLabel(s){
-  return{pending:'Pending','yt-searching':'Searching YouTube...','yt-found':'YouTube found','yt-notfound':'Not on YouTube',hunyuan:'Hunyuan generating...',done:'Complete'}[s]||s;
 }
 
 function renderScenes(){
   var c=document.getElementById('scene-cards');
   if(!scenes.length){c.innerHTML='<div class="empty"><i class="ti ti-stack-2"></i>Press Run Agent to parse your script</div>';return;}
-  var info=RATIO_INFO[selectedRatio];
   c.innerHTML=scenes.map(function(sc,i){
-    return '<div class="scard">'+
-      '<div class="scard-head">'+
-        '<span>Scene '+(i+1)+': '+sc.title+'</span>'+
-        '<div style="display:flex;align-items:center;gap:5px">'+
-          '<span class="chip rt">'+selectedRatio+'</span>'+
-          '<span class="sstat '+sc.status+'">'+statLabel(sc.status)+'</span>'+
-        '</div>'+
-      '</div>'+
+    return '<div class="scard"><div class="scard-head"><span>Scene '+(i+1)+': '+sc.title+'</span>'+
+      '<span class="sstat '+(sc.status==='done'?'done':(sc.status==='pending'?'pending':'working'))+'">'+sc.status+'</span></div>'+
       '<div class="scard-body">'+
-        sc.assets.map(function(a,ai){
-          var r=sc.assetResults[ai];
-          return '<div style="margin:4px 0">'+
-            '<span class="chip as"><i class="ti ti-photo" style="font-size:10px"></i> '+a.slice(0,40)+(a.length>40?'...':'')+'</span>'+
-            (r?'<span class="chip '+(r.source==='youtube'?'yt':'hq')+'">'+
-              '<i class="ti ti-'+(r.source==='youtube'?'brand-youtube':'sparkles')+'" style="font-size:10px"></i> '+
-              (r.source==='youtube'?'YouTube found':'Hunyuan generated')+'</span>':'') +
-            (r&&r.source==='youtube'&&r.title?
-              '<div class="yt-result"><div class="yt-thumb"><i class="ti ti-player-play" style="font-size:12px;color:#A32D2D"></i></div>'+
-              '<div><div style="font-weight:600;color:#1a1a1a">'+r.title+'</div><div style="color:#999">'+r.channel+'</div></div></div>':'')+
-          '</div>';
-        }).join('')+
-        sc.voices.map(function(v){
-          return '<div style="margin:3px 0"><span class="chip vo"><i class="ti ti-microphone" style="font-size:10px"></i> '+v.char+'</span> <em>"'+v.line.slice(0,60)+(v.line.length>60?'...':'')+'"</em></div>';
-        }).join('')+
-        (sc.tones.length?'<div style="margin-top:5px">'+sc.tones.map(function(t){return '<span class="chip to"><i class="ti ti-mood-smile" style="font-size:10px"></i> '+t+'</span>';}).join(' ')+'</div>':'')+
-        (!sc.assets.length&&!sc.voices.length?'<span style="color:#999">No tags found in this scene</span>':'')+
+      sc.assets.map(function(a){return '<span class="chip as">'+a.slice(0,40)+'</span>';}).join('')+
+      (sc.ytRef?'<div style="margin:4px 0"><span class="chip yt">YouTube ref</span> <a class="result-link" href="'+sc.ytRef.url+'" target="_blank">'+sc.ytRef.title+'</a></div>':'')+
+      (sc.assetResult?'<div style="margin:4px 0"><span class="chip px">Pixabay clip used</span> <a class="result-link" href="'+sc.assetResult.url+'" target="_blank">view source</a></div>':'')+
+      sc.voices.map(function(v){return '<div style="margin:3px 0"><span class="chip vo">'+v.char+'</span> <em>"'+v.line.slice(0,60)+'"</em></div>';}).join('')+
+      (sc.tones.length?'<div style="margin-top:5px">'+sc.tones.map(function(t){return '<span class="chip to">'+t+'</span>';}).join(' ')+'</div>':'')+
       '</div></div>';
   }).join('');
 }
@@ -527,8 +342,7 @@ function callGemini(prompt){
   var key=document.getElementById('gem-key').value.trim();
   if(!key) return Promise.resolve(null);
   return fetch('https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key='+key,{
-    method:'POST',
-    headers:{'Content-Type':'application/json'},
+    method:'POST',headers:{'Content-Type':'application/json'},
     body:JSON.stringify({contents:[{parts:[{text:prompt}]}],generationConfig:{temperature:0.7,maxOutputTokens:1000}})
   }).then(function(r){return r.json();}).then(function(d){
     if(d.error) throw new Error(d.error.message);
@@ -536,150 +350,247 @@ function callGemini(prompt){
   }).catch(function(e){addLog('Gemini error: '+e.message,'err');return null;});
 }
 
-function sleep(ms){return new Promise(function(r){setTimeout(r,ms);});}
+function searchYouTube(query,ytKey){
+  return fetch('https://www.googleapis.com/youtube/v3/search?part=snippet&q='+encodeURIComponent(query)+'&type=video&videoLicense=creativeCommon&maxResults=1&key='+ytKey)
+    .then(function(r){return r.json();}).then(function(d){
+      if(d.error) throw new Error(d.error.message||'YouTube error');
+      if(d.items&&d.items.length){var it=d.items[0];return{title:it.snippet.title,url:'https://www.youtube.com/watch?v='+it.id.videoId};}
+      return null;
+    });
+}
 
-function handleHunyuan(sc,ai,hqPrompt){
-  sc.status='yt-notfound';
-  addLog('  Not on YouTube.','warn');
-  addLog('  Hunyuan generating: "'+hqPrompt.slice(0,45)+'..."','gem');
-  sc.status='hunyuan';renderScenes();
-  return sleep(900+Math.random()*500).then(function(){
-    sc.assetResults[ai]={source:'hunyuan',prompt:hqPrompt};
-    addLog('  Hunyuan clip ready.','ok');
-    renderScenes();
+function searchPixabay(query,pxKey){
+  return fetch('https://pixabay.com/api/videos/?key='+pxKey+'&q='+encodeURIComponent(query)+'&per_page=3&safesearch=true')
+    .then(function(r){
+      if(r.status===429) throw new Error('Pixabay rate limit hit — wait a bit and try again.');
+      return r.json();
+    }).then(function(d){
+      if(!d.hits||!d.hits.length) return null;
+      var hit=d.hits[0];
+      var v=hit.videos||{};
+      var pick=v.large||v.medium||v.small||v.tiny;
+      if(!pick) return null;
+      return{url:hit.pageURL,downloadUrl:pick.url,duration:hit.duration||6};
+    });
+}
+
+function speakToWav(text){
+  return new Promise(function(resolve){
+    if(!text||!text.trim()){resolve(null);return;}
+    try{
+      var data=meSpeak.speak(text,{rawdata:'array',speed:150});
+      if(data) resolve(new Uint8Array(data));
+      else resolve(null);
+    }catch(e){resolve(null);}
   });
+}
+
+function decodeWav(bytes,ctx){
+  return ctx.decodeAudioData(bytes.buffer.slice(bytes.byteOffset,bytes.byteOffset+bytes.byteLength));
+}
+
+function concatBuffers(buffers,ctx){
+  var totalLen=buffers.reduce(function(n,b){return n+b.length;},0);
+  var out=ctx.createBuffer(1,Math.max(totalLen,1),buffers[0]?buffers[0].sampleRate:22050);
+  var offset=0;
+  buffers.forEach(function(b){out.getChannelData(0).set(b.getChannelData(0),offset);offset+=b.length;});
+  return out;
+}
+
+function audioBufferToWav(buffer){
+  var numCh=1,sampleRate=buffer.sampleRate,samples=buffer.getChannelData(0);
+  var bytesPerSample=2,blockAlign=numCh*bytesPerSample;
+  var dataSize=samples.length*bytesPerSample;
+  var bufOut=new ArrayBuffer(44+dataSize);
+  var view=new DataView(bufOut);
+  function ws(o,s){for(var i=0;i<s.length;i++) view.setUint8(o+i,s.charCodeAt(i));}
+  ws(0,'RIFF');view.setUint32(4,36+dataSize,true);ws(8,'WAVE');ws(12,'fmt ');
+  view.setUint32(16,16,true);view.setUint16(20,1,true);view.setUint16(22,numCh,true);
+  view.setUint32(24,sampleRate,true);view.setUint32(28,sampleRate*blockAlign,true);
+  view.setUint16(32,blockAlign,true);view.setUint16(34,16,true);ws(36,'data');view.setUint32(40,dataSize,true);
+  var off=44;
+  for(var i=0;i<samples.length;i++,off+=2){var s=Math.max(-1,Math.min(1,samples[i]));view.setInt16(off,s<0?s*0x8000:s*0x7FFF,true);}
+  return new Uint8Array(bufOut);
+}
+
+function buildSceneAudio(sc,ctx){
+  if(!sc.voices.length) return Promise.resolve({wav:null,duration:0});
+  var chain=Promise.resolve([]);
+  sc.voices.forEach(function(v){
+    chain=chain.then(function(arr){
+      return speakToWav(v.line).then(function(bytes){
+        if(!bytes) return arr;
+        return decodeWav(bytes,ctx).then(function(buf){arr.push(buf);return arr;}).catch(function(){return arr;});
+      });
+    });
+  });
+  return chain.then(function(buffers){
+    if(!buffers.length) return {wav:null,duration:0};
+    var combined=concatBuffers(buffers,ctx);
+    return {wav:audioBufferToWav(combined),duration:combined.duration};
+  });
+}
+
+function loadFFmpeg(){
+  if(ffmpegReady) return Promise.resolve(ffmpegInstance);
+  var FFmpeg=window.__ffmpeg.FFmpeg, toBlobURL=window.__ffmpeg.toBlobURL;
+  ffmpegInstance=new FFmpeg();
+  var base='https://cdn.jsdelivr.net/npm/@ffmpeg/core@0.12.6/dist/esm';
+  return Promise.all([
+    toBlobURL(base+'/ffmpeg-core.js','text/javascript'),
+    toBlobURL(base+'/ffmpeg-core.wasm','application/wasm')
+  ]).then(function(urls){
+    return ffmpegInstance.load({coreURL:urls[0],wasmURL:urls[1]});
+  }).then(function(){ffmpegReady=true;return ffmpegInstance;});
+}
+
+function assembleVideo(){
+  var info=RATIO_INFO[selectedRatio];
+  var ff;
+  return loadFFmpeg().then(function(inst){
+    ff=inst;
+    addLog('ffmpeg.wasm loaded — rendering in your browser now.','ff');
+    var writeChain=Promise.resolve();
+    var usable=scenes.filter(function(sc){return sc.clipBlob;});
+    usable.forEach(function(sc,i){
+      writeChain=writeChain.then(function(){
+        return window.__ffmpeg.fetchFile(sc.clipBlob).then(function(data){return ff.writeFile('v'+i+'.mp4',data);});
+      }).then(function(){
+        if(sc.audioBlob) return window.__ffmpeg.fetchFile(sc.audioBlob).then(function(data){return ff.writeFile('a'+i+'.wav',data);});
+      });
+    });
+    return writeChain.then(function(){return usable;});
+  }).then(function(usable){
+    if(!usable.length) throw new Error('No scenes had a usable clip — check your Pixabay key and asset descriptions.');
+    var args=[];
+    var filterParts=[];
+    usable.forEach(function(sc,i){args.push('-i','v'+i+'.mp4');});
+    usable.forEach(function(sc,i){if(sc.audioBlob) args.push('-i','a'+i+'.wav');});
+    var audioIdxStart=usable.length;
+    var audioCursor=0;
+    usable.forEach(function(sc,i){
+      var dur=Math.max(3,Math.min(10,sc.duration||4));
+      filterParts.push('['+i+':v]scale='+info.w+':'+info.h+':force_original_aspect_ratio=increase,crop='+info.w+':'+info.h+',trim=0:'+dur+',setpts=PTS-STARTPTS,fps=24[v'+i+']');
+    });
+    var vLabels=usable.map(function(sc,i){return '[v'+i+']';}).join('');
+    filterParts.push(vLabels+'concat=n='+usable.length+':v=1:a=0[vout]');
+    var audioLabels=[];
+    usable.forEach(function(sc,i){
+      var dur=Math.max(3,Math.min(10,sc.duration||4));
+      if(sc.audioBlob){
+        var ai=audioIdxStart+audioCursor;
+        filterParts.push('['+ai+':a]apad=pad_dur=0.3[a'+i+']');
+        audioLabels.push('[a'+i+']');
+        audioCursor++;
+      } else {
+        filterParts.push('anullsrc=r=22050:cl=mono:d='+dur+'[a'+i+']');
+        audioLabels.push('[a'+i+']');
+      }
+    });
+    filterParts.push(audioLabels.join('')+'concat=n='+usable.length+':v=0:a=1[aout]');
+    args.push('-filter_complex',filterParts.join(';'));
+    args.push('-map','[vout]','-map','[aout]','-c:v','libx264','-preset','ultrafast','-c:a','aac','-shortest','output.mp4');
+    addLog('Encoding final video (this can take a few minutes)...','ff');
+    return ff.exec(args).then(function(){return ff.readFile('output.mp4');});
+  }).then(function(data){return new Blob([data.buffer],{type:'video/mp4'});});
 }
 
 function runAgent(){
   if(running)return;
   var script=document.getElementById('script').value.trim();
-  if(!script){addLog('No script found — write your script first.','err');
-    document.querySelectorAll('.tab')[2].click();return;}
-  running=true;logs=[];
+  if(!script){addLog('No script found — write your script first.','err');document.querySelectorAll('.tab')[2].click();return;}
+  running=true;logs=[];resultBlob=null;
+  document.getElementById('result-wrap').style.display='none';
   var btn=document.getElementById('run-btn');
-  btn.classList.add('running');
-  btn.innerHTML='<div class="spinner"></div> Running...';
-  btn.disabled=true;
+  btn.classList.add('running');btn.innerHTML='<div class="spinner"></div> Running...';btn.disabled=true;
   document.querySelectorAll('.tab')[2].click();
   setP(0,'Starting...');
-  var info=RATIO_INFO[selectedRatio];
   addLog('Agent started.','ok');
-  addLog('Format: '+selectedRatio+' ('+info.res+') '+info.desc,'gem');
   var gemKey=document.getElementById('gem-key').value.trim();
   var ytKey=document.getElementById('yt-key').value.trim();
-  if(!gemKey) addLog('No Gemini key — get free key at aistudio.google.com','warn');
-  else addLog('Gemini 1.5 Flash ready (free).','gem');
-  if(!ytKey) addLog('No YouTube key — simulated search mode.','warn');
-  else addLog('YouTube API ready (free).','ok');
-  if(kaggle) addLog('Kaggle GPU on — Hunyuan fallback ready.','ok');
-  else addLog('Kaggle off — enable for free Hunyuan GPU.','warn');
+  var pxKey=document.getElementById('px-key').value.trim();
+  if(!pxKey){addLog('Pixabay key is required — that is what supplies the actual downloadable footage.','err');running=false;btn.disabled=false;btn.classList.remove('running');btn.innerHTML='<i class="ti ti-player-play"></i> Run Agent';return;}
+  if(!gemKey) addLog('No Gemini key — using raw asset text as search queries.','warn');
+  if(!ytKey) addLog('No YouTube key — skipping reference matches.','warn');
   addLog('Parsing script...','');
   scenes=parseScript(script);
-  var cnt=scenes.length;
-  document.getElementById('run-status').textContent='Running — '+cnt+' scene(s) found';
-  addLog('Found '+cnt+' scene(s).','ok');
-  setP(12,'12%');
+  addLog('Found '+scenes.length+' scene(s).','ok');
+  setP(10,'10%');
   renderScenes();
   var hostName=document.getElementById('host-name').value||'the host';
   var charList=chars.map(function(c){return c.name+' ('+c.voice+')';}).join(', ')||'Host, Narrator';
-  var gemPromise=Promise.resolve();
   var plan=null;
+  var gemPromise=Promise.resolve();
   if(gemKey){
-    addLog('Sending to Gemini for production plan...','gem');
-    setP(20,'20%');
-    var prompt='You are an AI Video Production Agent.\nHost: '+hostName+'\nCharacters: '+charList+'\nRatio: '+selectedRatio+' ('+info.res+')\n\nSCRIPT:\n'+script.slice(0,2000)+'\n\nReturn ONLY valid JSON:\n{"scenes":[{"title":"title","assets":[{"description":"asset","youtubeQuery":"short query","hunyuanPrompt":"generation prompt"}],"voiceovers":[{"character":"name","tone":"tone","emotionNote":"delivery tip"}]}],"overallTone":"tone","duration":"estimate","tip":"tip"}';
+    var prompt='You are a video production planner.\nHost: '+hostName+'\nCharacters: '+charList+'\nRatio: '+selectedRatio+'\n\nSCRIPT:\n'+script.slice(0,2000)+'\n\nReturn ONLY valid JSON:\n{"scenes":[{"title":"title","assets":[{"description":"asset","searchQuery":"3-5 word query"}]}],"overallTone":"tone"}';
     gemPromise=callGemini(prompt).then(function(txt){
       if(txt){try{plan=JSON.parse(txt.replace(/```json|```/g,'').trim());}catch(e){}}
-      if(plan){
-        addLog('Plan ready: '+(plan.overallTone||'dynamic')+' — ~'+(plan.duration||'TBD'),'gem');
-        if(plan.tip) addLog('Tip: '+plan.tip,'gem');
-      } else {
-        addLog('Basic mode — add Gemini key for AI planning.','warn');
-      }
+      lastPlan=plan;
+      if(plan) addLog('Gemini plan ready: '+(plan.overallTone||'dynamic'),'gem');
     });
   }
+  var audioCtx=new (window.AudioContext||window.webkitAudioContext)();
   gemPromise.then(function(){
-    setP(32,'32%');
+    setP(20,'20%');
     var sceneChain=Promise.resolve();
     scenes.forEach(function(sc,i){
       sceneChain=sceneChain.then(function(){
         var planSc=plan&&plan.scenes?plan.scenes[i]:null;
-        setP(32+Math.round((i/scenes.length)*57),'Scene '+(i+1)+'/'+scenes.length);
+        setP(20+Math.round((i/scenes.length)*40),'Scene '+(i+1)+'/'+scenes.length);
         addLog('— Scene '+(i+1)+': "'+sc.title+'"','');
-        if(!sc.assets.length){
-          sc.status='done';sc.assetResults=[];renderScenes();
-          addLog('  No assets tagged.','');
-          return Promise.resolve();
+        sc.status='working';renderScenes();
+        var asset=sc.assets[0];
+        var query=(planSc&&planSc.assets&&planSc.assets[0]?planSc.assets[0].searchQuery:asset)||sc.title;
+        var ytChain=Promise.resolve();
+        if(ytKey&&asset){
+          ytChain=searchYouTube(query,ytKey).then(function(r){if(r){sc.ytRef=r;addLog('  YouTube ref: "'+r.title+'"','yt');}}).catch(function(e){addLog('  YouTube error: '+e.message,'err');});
         }
-        var assetChain=Promise.resolve();
-        sc.assets.forEach(function(asset,ai){
-          assetChain=assetChain.then(function(){
-            var ytQ=planSc&&planSc.assets&&planSc.assets[ai]?planSc.assets[ai].youtubeQuery:asset.slice(0,40);
-            var hqP=planSc&&planSc.assets&&planSc.assets[ai]?planSc.assets[ai].hunyuanPrompt:asset;
-            sc.status='yt-searching';renderScenes();
-            addLog('  YouTube: "'+ytQ+'"...','yt');
-            if(ytKey){
-              return fetch('https://www.googleapis.com/youtube/v3/search?part=snippet&q='+encodeURIComponent(ytQ)+'&type=video&videoLicense=creativeCommon&maxResults=1&key='+ytKey)
-                .then(function(r){return r.json();})
-                .then(function(d){
-                  if(d.items&&d.items.length){
-                    var item=d.items[0];
-                    sc.status='yt-found';
-                    sc.assetResults[ai]={source:'youtube',title:item.snippet.title,channel:item.snippet.channelTitle};
-                    addLog('  Found: "'+item.snippet.title+'"','ok');
-                    renderScenes();
-                    return sleep(200);
-                  } else {
-                    return handleHunyuan(sc,ai,hqP);
-                  }
-                }).catch(function(){return handleHunyuan(sc,ai,hqP);});
-            } else {
-              return sleep(700+Math.random()*400).then(function(){
-                if(Math.random()>0.4){
-                  var titles=['City drone footage 4K','Laptop typing close-up','Product showcase clip','Aerial nature footage','Studio background free'];
-                  var idx=Math.floor(Math.random()*titles.length);
-                  sc.status='yt-found';
-                  sc.assetResults[ai]={source:'youtube',title:titles[idx],channel:'FreeFootage'};
-                  addLog('  Found (simulated): "'+titles[idx]+'"','ok');
-                  renderScenes();
-                } else {
-                  return handleHunyuan(sc,ai,hqP);
-                }
-              });
-            }
-          });
-        });
-        return assetChain.then(function(){
-          sc.voices.forEach(function(vo){
-            var note=planSc&&planSc.voiceovers?planSc.voiceovers.find(function(v){return v.character===vo.char;}):null;
-            addLog('  Voice ['+vo.char+'] tone:'+(sc.tones[0]||'neutral')+' — '+(note?note.emotionNote:'natural'),'gem');
-          });
-          sc.status='done';renderScenes();
-          addLog('  Scene '+(i+1)+' done.','ok');
-        });
+        return ytChain.then(function(){
+          if(!asset) return Promise.resolve();
+          return searchPixabay(query,pxKey).then(function(r){
+            if(!r||!r.downloadUrl){addLog('  No Pixabay clip found for "'+query+'".','warn');return;}
+            sc.assetResult=r;
+            addLog('  Pixabay clip found — downloading...','px');
+            return fetch(r.downloadUrl).then(function(resp){return resp.blob();}).then(function(blob){sc.clipBlob=blob;addLog('  Clip downloaded.','ok');}).catch(function(e){addLog('  Pixabay download error: '+e.message,'err');});
+          }).catch(function(e){addLog('  Pixabay error: '+e.message,'err');});
+        }).then(function(){
+          if(mespeakReady||window.meSpeak){
+            return buildSceneAudio(sc,audioCtx).then(function(res){
+              if(res.wav){sc.audioBlob=new Blob([res.wav],{type:'audio/wav'});sc.duration=Math.max(3,res.duration);addLog('  Voiceover rendered ('+res.duration.toFixed(1)+'s).','gem');}
+            });
+          }
+        }).then(function(){sc.status='done';renderScenes();addLog('  Scene '+(i+1)+' ready.','ok');});
       });
     });
     return sceneChain;
   }).then(function(){
-    setP(95,'95%');
-    addLog('Assembling '+selectedRatio+' video timeline...','');
-    return sleep(400);
-  }).then(function(){
-    addLog('Applying voiceovers with Bark TTS...','');
-    return sleep(300);
-  }).then(function(){
-    addLog('Colour grade and transitions applied.','ok');
-    return sleep(200);
-  }).then(function(){
+    setP(65,'Assembling video...');
+    addLog('All scenes processed. Starting ffmpeg.wasm render...','ff');
+    return assembleVideo();
+  }).then(function(blob){
+    resultBlob=blob;
     setP(100,'Done!');
-    addLog('Production complete — '+selectedRatio+' video ready to export!','ok');
-    document.getElementById('run-status').textContent='Done! '+scenes.length+' scenes — '+selectedRatio+' '+RATIO_INFO[selectedRatio].res;
+    var video=document.getElementById('result-video');
+    video.src=URL.createObjectURL(blob);
+    document.getElementById('result-wrap').style.display='block';
+    addLog('Render complete — video ready below.','ok');
+    document.getElementById('run-status').textContent='Done! Scroll down to preview and download.';
+  }).catch(function(e){
+    addLog('Render failed: '+e.message,'err');
+    document.getElementById('run-status').textContent='Failed — see log for details.';
+  }).then(function(){
     running=false;
     var btn=document.getElementById('run-btn');
-    btn.classList.remove('running');
-    btn.innerHTML='<i class="ti ti-player-play"></i> Run Again';
-    btn.disabled=false;
+    btn.classList.remove('running');btn.innerHTML='<i class="ti ti-player-play"></i> Run Again';btn.disabled=false;
   });
+}
+
+function downloadResult(){
+  if(!resultBlob) return;
+  var url=URL.createObjectURL(resultBlob);
+  var a=document.createElement('a');
+  a.href=url;a.download='final-video.mp4';a.click();
+  URL.revokeObjectURL(url);
 }
 
 addChar('Host','Host (Male)');
