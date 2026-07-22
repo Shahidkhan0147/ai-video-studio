@@ -434,16 +434,15 @@ function buildSceneAudio(sc,ctx){
 function loadFFmpeg(){
   if(ffmpegReady) return Promise.resolve(ffmpegInstance);
   var FFmpeg=window.__ffmpeg.FFmpeg, toBlobURL=window.__ffmpeg.toBlobURL;
+  ffmpegInstance=new FFmpeg();
   var base='https://cdn.jsdelivr.net/npm/@ffmpeg/core@0.12.6/dist/esm';
   var workerBase='https://cdn.jsdelivr.net/npm/@ffmpeg/ffmpeg@0.12.10/dist/esm';
-  return toBlobURL(workerBase+'/worker.js','text/javascript').then(function(workerURL){
-    ffmpegInstance=new FFmpeg({classWorkerURL:workerURL});
-    return Promise.all([
-      toBlobURL(base+'/ffmpeg-core.js','text/javascript'),
-      toBlobURL(base+'/ffmpeg-core.wasm','application/wasm')
-    ]);
-  }).then(function(urls){
-    return ffmpegInstance.load({coreURL:urls[0],wasmURL:urls[1]});
+  return Promise.all([
+    toBlobURL(base+'/ffmpeg-core.js','text/javascript'),
+    toBlobURL(base+'/ffmpeg-core.wasm','application/wasm'),
+    toBlobURL(workerBase+'/worker.js','text/javascript')
+  ]).then(function(urls){
+    return ffmpegInstance.load({coreURL:urls[0],wasmURL:urls[1],classWorkerURL:urls[2]});
   }).then(function(){ffmpegReady=true;return ffmpegInstance;});
 }
  
@@ -603,3 +602,4 @@ renderScenes();
 </script>
 </body>
 </html>
+ 
